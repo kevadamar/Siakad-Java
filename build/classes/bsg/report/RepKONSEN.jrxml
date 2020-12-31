@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     konsentrasi.`id_konsentrasi` AS konsentrasi_id_konsentrasi,
+     konsentrasi.`nama_konsen` AS konsentrasi_nama_konsen
+FROM
+     `konsentrasi` konsentrasi]]>
+	</queryString>
+	<field name="konsentrasi_id_konsentrasi" class="java.lang.Integer"/>
+	<field name="konsentrasi_nama_konsen" class="java.lang.String"/>
+	<group name="konsentrasi_id_konsentrasi">
+		<groupExpression><![CDATA[$F{konsentrasi_id_konsentrasi}]]></groupExpression>
+	</group>
+	<group name="konsentrasi_nama_konsen">
+		<groupExpression><![CDATA[$F{konsentrasi_nama_konsen}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="14" width="271" height="40"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[STMIK BINA SARANA GLOBAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="37" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Jl.Arya Santika]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="54" width="203" height="25"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PRODI]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="7" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tanggal Cetak :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="94" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="68" y="23" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ID Konsentrasi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="23" width="100" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nama Prodi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="68" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{konsentrasi_id_konsentrasi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="154" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{konsentrasi_nama_konsen}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
